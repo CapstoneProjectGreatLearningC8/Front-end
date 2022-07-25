@@ -1,0 +1,91 @@
+<style>
+    .h{
+        color:rgb(0, 30, 128);
+        font-family: serif;
+        font-style:italic;
+        font-weight:600;
+        font-size:60px;
+    }
+</style>
+
+
+<h1 align="center" style="font-size: 40px; font-family: fantasy; font-style: italic; font-weight: lighter;"   ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACGCAMAAAA4hZJqAAAAk1BMVEX///8ACSZ0eYGRlZqqrrVeY2wAAyIAACLv8PArOkkAACVjZ2+prbHZ290AACAAABLg4eMAAA0rNkQAGi+8wMMdKDoAAAAAFCv5+vgaK0CwsbUMHzQiLz+BhY0AABoAEiyfoqY3RFNHUV3Q0dMTIzVQWWZncXdKT1ZUWWGMjpZtcXsTHDNBSlU/Q0vHyMtkZXIsNErg7AMhAAADjklEQVR4nO3ZbXOqOhAAYCKtYgVEA11KQCIvPeLlcs///3U3AUVsZ2pRSjhz9vliyHToat52QdMQQgghhBBCCCGEELqDH+zfGkmRqg4miillAmUAWWQojaWise42eE7iUmk0BXm/XLge+6UuFE3Tyapz5XqLQFko9TBFgSQnr68VcPAVRlPEQKRsJq8cYJbCYDQ3L8skWdI5Fxd+/mKqDOaEQyhXkg656kgEY2/LaVORUO1e03iHQn4Q5qqORDAhkQvpSCLVkQjOLpQLKYDtcw8r82dGNSRyw3P+ieffR2CR/cjxGpGj/Eif+ij2bJidybgWULjjJk5C32//1U366+bKPFzf8x2t3dZ5PBgeLq9tvbvuOsyscT66a2H46zflGWLriajNyK6s4inskg0ns6czSnyeq0zHriWx/uAdglmjEFOPzzp6Z8BWFj+4AfulPbelTaUZsX2x+7fvrXS6fywWkULpDVMMt6t39J6LJeGPBjMYaxMqTeCv6PCsOoSWkSy46hhaKdDpHAVRvLr9R2PJ6FCleZV5rTexJri8hj4FpUvZUKPE17Rli2/434toNHnwN0XDrSXfvajEtVG3enxVwyNTKPgarj2htOoIM9UhtKpwPU5a5Rs3uUuWjBKLdvxYxnzyRmg4QL1kWJ3KRLYtkUj4506rnpNLz1t8ySbbIR4aO0m4beQi5cvEZyj29Nm5M6y3jhk9WDcM8LOIYNhmXXtdapr5KhsHTTu8rk+99URIYaQtpJ2cMquvG5rWeQrQ5PoRZHwym4j/CyBffelYjRdOQXcvX6L2iIeB4ZpfCVa0HC+YW6xwM51aMs3WAwVjdYoluWOkem95NtRxcNyQs7XMp0Kb9AWLoZZTdbwU2PLsDWa9RdMp3/5ijsuDz8mT6H1Kx17RfuQt7AU9fjibi1D0wvMgJ/a3GSVA+Z7HDLqz1E9i2UsZjHgsyXzGc32Rce3ZvjMmEc0CQ/Zm3ogjZWXQ1K1WaF8KWGPOeN1wtmO+yTTj5akVdcqRAM6PzPReheeD9Pn5nz3NLxUsb6tZ1x7x9Tcnedu6/AYczoeRuViNF0zFoFm9fkIuj3nTuXdaW3nzcnUke3aoM+CIkc6eUp569Ww35k5TxWzJ3SAHwju9KWNb3TWfCRnzh5GFNNCMQnb9LD5dAmUU2KNP6Pty9DL+/SlLMHgS/55N5zUKQgghhBBCCCGEEPqz/A/yS1BqKBaicQAAAABJRU5ErkJggg==" alt="Cart" height="100px" width="80px">Cart</h1>
+
+<!--Cart Detail Table-->
+<<div class="container">
+    <table class="table table-bordered-dark border-dark text-center border border-dark">
+        <thead>
+        <tr>
+            
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter; ">Picture</th>
+            <th scope="col"style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">Name</th>
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">Price</th>
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">Quantity</th>
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">Total</th>
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">Status</th>
+    
+        </tr>
+        </thead>
+        <tbody>
+    
+        <tr *ngFor="let productInOrder of productInOrders" style="height: 50px;">
+            <th class="align-middle" scope="row" >
+                <a routerLink="/product/{{productInOrder.productId}}"><img height="150px"
+                                                                           src="{{productInOrder.productIcon}}"
+                                                                           alt="{{productInOrder.productName}}"></a>
+            </th>
+            <td class="align-middle"><a
+                    routerLink="/product/{{productInOrder.productId}}">{{productInOrder.productName}}</a></td>
+            <td class="align-middle">{{productInOrder.productPrice | currency}}</td>
+    
+            <td class="align-middle">
+                <a (click)="minusOne(productInOrder)"><i class="fa fa-minus"></i></a>
+                <input min="1" id="{{productInOrder.productId}}"
+                       [max]=productInOrder.productStock
+                       [(ngModel)]="productInOrder.count"
+                       (change)="onChange(productInOrder)"
+                       size="5"
+                       type="number"
+                       required
+                       name='count'>
+                <a (click)="addOne(productInOrder)"> <i class="fa fa-plus"></i></a>
+            </td>
+    
+            <td class="align-middle">{{productInOrder.productPrice * productInOrder.count|currency}}</td>
+            <td class="align-middle">
+                <a (click)="remove(productInOrder)" routerLink="./">Remove</a>
+            </td>
+    
+        </tr>
+    
+        </tbody>
+    </table>
+    <div *ngIf="productInOrders?.length > 0; else empty">
+        <select [(ngModel)]="selectedCoupon" name="Coupon" class="form-control border-dark" style="margin-bottom: 20px; height: auto;">
+            <option style="font-size: 10px;">Select Coupon</option>
+            <option *ngFor="let dep of coupon">
+                {{dep.id}}
+            </option>
+        </select>
+        <!--<h2>{{selectedCoupon}}</h2>-->
+        <h5 *ngIf="!selectedCoupon"style="display: inline; padding: auto;" >Total Amount: {{total | currency}} </h5>
+        <h5 *ngIf="selectedCoupon" style="display: inline;">Total Amount: {{total-total*0.2 | currency}}</h5>
+    
+        <button (click)="checkout()" class="btn btn-danger float-right" style="margin-top: 20px; margin-bottom: 20px;">Checkout</button>
+        <!--<button (click)="getCoupon()" class="btn btn-warning float-right">check</button> -->
+        <!--<select [(ngModel)]="selectedCoupon" name="Coupon" class="form-control" (ngModelchange)='selected($event)'>
+                <option>Select Coupon</option>
+                <option *ngFor="let dep of coupon">
+                    {{dep.id}}
+                </option>
+        </select> -->
+    </div>
+    <ng-template #empty>
+        <h4 class="text-muted text-center">Cart is empty. Lets go for shopping! :)</h4>
+    </ng-template>
+    
+</div>
+
+
+
+

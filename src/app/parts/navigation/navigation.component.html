@@ -1,0 +1,145 @@
+<style>
+    .h{
+        font-size: 30px;
+        color:white;
+    
+    }
+    .h1{
+        font-size: 20px;
+        color: rgb(245, 146, 17);
+    }
+    
+    .navcolor {
+        color: white;
+        cursor:pointer;
+        padding:5px;
+        text-decoration: none;
+        background-color: rgb(195, 202, 202);
+        border-radius: 40px;
+    }
+    .nanbar-custom{
+        color: aqua;
+    }
+    .navcolor:hover{
+        background-color: rgb(243, 236, 236);
+        color: black;
+    }
+    .navbar-toggler-icon{
+        stroke: aliceblue;
+    }
+    .navcolor-b{
+        color: black;
+        cursor: pointer;
+        padding:  5px;
+        text-decoration: solid;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .navcolor-b:hover{
+        background-color: azure;
+        border-radius: 20px;
+    }
+    .nav-user
+    {
+        color: wheat;
+    }
+    </style>
+    
+    
+    <nav class="navbar navbar-expand-lg  bg-dark">
+        <img src="data:image/jpeg;base64,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"  height="50px" width="50px">
+        <a class="navbar-brand h" [routerLink]="root" style="font-family: cursive; font-weight: bold; font-style: normal;"> 
+            ShopForHome
+        </a>
+        <div class="input-group">
+            <div class="form-outline">
+              <!-- <input type="search" id="form1" class="form-control" />
+              <label class="form-label" for="form1">Search</label> -->
+              <input type = "search" name="search" [(ngModel)]="searchText" placeholder ="Search here" class="form-control" />
+            </div>
+            <button type="button" class="btn btn-primary" style="margin-left: 10px;">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+       
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse h1" id="navbarNav">
+
+            <div class="navbar-nav ml-auto">
+                <div class="nav-item nav-link h1 dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Furniture Categories
+                    </a>
+                  
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="nav-item nav-link  dropdown-item"
+                        routerLink="/category/0">
+                        Flowervase
+                     </a>
+                     <a class="nav-item nav-link dropdown-item"
+                        routerLink="/category/1">
+                        Wall Paintings
+                     </a>
+                     <a class="nav-item nav-link dropdown-item"
+                        routerLink="/category/2">
+                        Decor Paints
+                     </a>
+                     <a class="nav-item nav-link dropdown-item"
+                        routerLink="/category/3">
+                        flora
+                     </a>
+                    </div>
+                  </div>
+                <a *ngIf="!currentUser || currentUser.role == Role.Customer"
+                        class="nav-item nav-link h1" routerLink="/cart" style="font-family: cursive;">
+                    <i class="fas fa-shopping-cart"></i>
+                    Cart
+                </a>
+    
+                <div class="navbar-nav" *ngIf="currentUser && currentUser.role == Role.Manager">
+    
+                    <a class="nav-item nav-link h1"  routerLink="/discount">Discount</a>
+                    <a class="nav-item nav-link h1" (click)=getUsers() routerLink="/admin/user">Users</a>
+                    <a class="nav-item nav-link h1" routerLink="/seller/product">Stocks</a>
+                </div>
+    
+                <div class="navbar-nav" *ngIf="currentUser && currentUser.role == Role.Customer">
+                    <a class="nav-item nav-link h1"  routerLink="/wishlist">Wishlist</a>
+                </div>
+    
+                
+                <ng-template #noUser>
+
+                    
+                    <a class="nav-item nav-link h1" style="font-family: cursive; " routerLink="/login">
+                         Login
+                    </a>
+                    <a class="nav-item nav-link h1" style="font-family: cursive;" routerLink="/register">
+                        Register
+                    </a>
+                </ng-template>
+                <ng-container *ngIf="currentUser; else noUser">
+                    
+                    
+                    <!-- <a class="nav-item nav-link"  routerLink="/discount">Discount</a>
+                     <a class="nav-item nav-link" (click)=getUsers() routerLink="/admin/user">Users</a>
+                     <a class="nav-item nav-link" routerLink="/seller/product">Stocks</a> -->
+                     <a class="nav-item nav-link h1" (click)="logout()" routerLink="/login" [queryParams]="{logout: true}">
+                        logOut
+                    </a>
+                     <a class="nav-item nav-link h1" routerLink="/order">
+                         <i class="fas fa-list-ul"></i>
+                         Orders
+                     </a>
+                     <a class="nav-item nav-link h1 nav-user" routerLink="/profile">
+                        <i class="	fas fa-user-alt"></i>
+                         {{name}}
+                     </a>
+                     
+                 </ng-container>
+                </div>
+        </div>
+        </nav>

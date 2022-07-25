@@ -1,0 +1,168 @@
+<!-- <section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py 5 max-width:100% max-height:100%">
+    <div class="row d-flex justify-content-center align-items-center h-200">
+      <div class="col-xl-20">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                  
+                  
+                <div class="text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">We are The Shop From Home Team</h4>
+                </div>
+
+
+                <form #form='ngForm' class="text-format" (ngSubmit)="onSubmit()">
+                  <h4>Register Here</h4>
+                  <br>
+                  <div class="form-outline mb-4 ">
+                    <label><b>Enter your Email</b></label>
+                    <input [(ngModel)]="user.email" type="email" class="form-control text-format form-control-lg" id="email" name="email" placeholder="Enter email" email required autofocus  #email="ngModel">
+                    <div  *ngIf="email.invalid && (email.dirty ||email.touched)" >
+                        <div *ngIf="email.errors.required" >
+                            please enter your Email.
+                        </div>
+                        <div *ngIf="email.errors.email">
+                            Invalid Email.
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label><b>Enter your Name</b></label>
+                          <input [(ngModel)]="user.name" type="text" class="form-control text-format form-control-lg" id="name" name="name" placeholder="Your name" required #name="ngModel">
+                            <div  *ngIf="name.invalid && (name.dirty ||name.touched)">
+                                <div *ngIf="name.errors.required">
+                                    Name .
+                                </div>
+                                <div *ngIf="name.errors.minlength">
+                                    Name must be atleast 3 characters.
+                                </div>
+                            </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                  <label><b>Enter your Password</b></label>
+                  <input  [(ngModel)]="user.password" type="password" class="form-control text-format form-control-lg" id="password" name="password" placeholder="Password" minlength="3" required #password="ngModel">
+                    <div  *ngIf="password.invalid && (password.dirty ||password.touched)">
+                        <div *ngIf="password.errors.required">
+                            Password is required.
+                        </div>
+                        <div *ngIf="password.errors.minlength">
+                            Password must be atleast 3 characters .
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                    <label><b>Enter your Phone number</b></label>
+                  <input [(ngModel)]="user.phone" type="text" class="form-control text-format form-control-lg" id="phone" name="phone" placeholder="Phone" required #phone="ngModel" >
+                    <div  *ngIf="phone.invalid && (phone.dirty ||phone.touched)">
+                        <div *ngIf="phone.errors.required">
+                            Phone is required.
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-outline mb-4">
+                    <label><b>Enter your Address</b></label>
+                  <input [(ngModel)]="user.address" type="text" class="form-control text-format form-control-lg" id="address" name="address" placeholder="Address" required #address="ngModel">
+                    <div  *ngIf="address.invalid && (address.dirty ||address.touched)">
+                        <div *ngIf="address.errors.required">
+                            Address is required.
+                        </div>
+                    </div>
+                    </div>
+                   
+                    <div class="text-center pt-1 mb-5 pb-1">
+                      <button  [disabled]="!form.form.valid" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 text-format" type="submit">Sign Up</button>   
+                    </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h3 class="mb-4">We are more than just a company</h3>
+                <p class="small mb-0 text-format">Shop For Home is a ecommerce site, specially designed for customer who 
+                  wants to decorate their houses with new furniture and want to add some class to their house and 
+                  to their lifestyle. With easy to access ui you can create your account and can start shopping for
+                  your home.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<div class="signupFrm">
+    <form   #form='ngForm' (ngSubmit)="onSubmit()" class="form">
+        <h1 class="title">Sign up</h1>
+
+        <div class="inputContainer">
+          
+          <input [(ngModel)]="user.email" type="email" id="email" name="email" class="input" placeholder="Enter email" email required autofocus  #email="ngModel">
+          <label for="" class="label">Email</label>
+          <div  *ngIf="email.invalid && (email.dirty ||email.touched)" >
+              <div *ngIf="email.errors.required" >
+                  please enter your Email.
+              </div>
+              <div *ngIf="email.errors.email">
+                  Invalid Email.
+              </div>
+          </div>
+        </div>
+
+        <div class="inputContainer">
+          <input [(ngModel)]="user.name" type="text"  id="name" name="name" class="input" placeholder="Your name" required #name="ngModel">
+          <label for="" class="label">Name</label>
+          <div  *ngIf="name.invalid && (name.dirty ||name.touched)">
+              <div *ngIf="name.errors.required">
+                  Name .
+              </div>
+              <div *ngIf="name.errors.minlength">
+                  Name must be atleast 3 characters.
+              </div>
+          </div>
+        </div>
+
+        <div class="inputContainer">
+          <input  [(ngModel)]="user.password" type="password" id="password" class="input" name="password" placeholder="Password" minlength="3" required #password="ngModel">
+          <label for="" class="label">Password</label>
+          <div  *ngIf="password.invalid && (password.dirty ||password.touched)">
+              <div *ngIf="password.errors.required">
+                  Password is required.
+              </div>
+              <div *ngIf="password.errors.minlength">
+                  Password must be atleast 3 characters .
+              </div>
+          </div>
+        </div>
+
+        <div class="inputContainer">
+            <input type="text" class="input" placeholder="a">
+            <label for="" class="label">Confirm Password</label>
+        </div>
+
+        <div class="inputContainer">
+          <input [(ngModel)]="user.phone" type="text" id="phone" name="phone" class="input" placeholder="Phone" required #phone="ngModel" >
+          <label for="" class="label">Phone Number</label>
+          <div  *ngIf="phone.invalid && (phone.dirty ||phone.touched)">
+              <div *ngIf="phone.errors.required">
+                  Phone is required.
+              </div>
+          </div>
+        </div>
+        <div class="inputContainer">
+          <input [(ngModel)]="user.address" type="text" class="input" id="address" name="address" placeholder="Address" required #address="ngModel">
+          <label for="" class="label"> Address </label>
+          <div  *ngIf="address.invalid && (address.dirty ||address.touched)">
+              <div *ngIf="address.errors.required">
+                  Address is required.
+              </div>
+          </div>
+        </div>
+        <input type="submit" class="submitBtn" value="Sign up">
+        
+    </form>
+</div>

@@ -1,0 +1,62 @@
+<style>
+    .h{
+        font-family:serif;
+        font-size:65px;
+        font-style:italic;
+        font-weight:700;
+        color:rgb(5, 20, 228);
+
+    }
+</style>
+
+
+
+
+<h1 align="center" style="font-size: 40px; font-family: fantasy; font-style: italic; font-weight: lighter;"   ><img src="https://cdn5-ss16.sharpschool.com/UserFiles/Servers/Server_27051432/Image/Parent%20Resources/Class%20Supply%20Lists%20Wish%20Lists/Class%20Supply%20Wish%20Lists/Wish%20List.png" alt="Cart" height="100px" width="150px">Wish List</h1>
+
+<!--Cart Detail Table-->
+<div class="container">
+    <table class="table table-striped text-center">
+        <thead>
+        <tr>
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">Picture</th>
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">ID</th>
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">Name of the product</th>
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">Cost</th>
+            <th scope="col" style="font-size: 20px; font-family: fantasy; font-style: italic; font-weight: lighter;">Status</th>
+    
+        </tr>
+        </thead>
+        <tbody>
+    
+        <tr *ngFor="let productInOrder of page?.content">
+          
+            <th class="align-middle" scope="row">
+                <a routerLink="/product/{{productInOrder.product.productId}}"><img height="100px"
+                                                                           src="{{productInOrder.product.productIcon}}"
+                                                                           alt="{{productInOrder.product.productName}}"></a>
+            </th>
+           <td class="align-middle">
+            {{productInOrder.product.productId}}
+           </td>
+            <td class="align-middle"><a
+                    routerLink="/product/{{productInOrder.product.productId}}">{{productInOrder.product.productName}}</a></td>
+            <td class="align-middle">{{productInOrder.product.productPrice | currency}}</td>
+             
+            
+            <td class="align-middle" >
+                <a (click)="handleRemoveFromWishList(productInOrder.product.productId)" routerLink="/wishlist">Delete</a>
+            </td>
+          
+        </tr>
+    
+        </tbody>
+    </table>
+    
+    <ng-template #empty>
+        <h4 class="text-muted text-center">Wishlist is empty. Lets go for shopping! :)</h4>
+    </ng-template>
+    
+    
+    
+</div>

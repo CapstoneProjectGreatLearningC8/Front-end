@@ -1,0 +1,80 @@
+.fa-heart {
+    color :rgb(0, 0, 0);
+    cursor : pointer;
+}
+.b{
+    font-weight: 700;
+    color: rgb(13, 0, 128);
+    font-size: 80px;
+    font-family: serif;
+    font-style:italic;
+  }
+  .s{
+  color: rgb(72, 122, 236);
+  font-style: oblique;
+  font-family: cursive;
+  font-size: 15px;
+  font-weight: bold;
+  
+  }
+  .a{
+    font-size: 15px;
+    font-style: oblique;
+    font-family: cursive;
+  }
+  .p{
+    color: rgb(72, 122, 236);
+  font-style: oblique;
+  font-family: cursive;
+  font-size: 15px;
+  font-weight: bold;
+  }
+  .block{
+    height: 100%;
+    width: 80%;
+    padding: 2%;
+    margin-bottom: 2%;
+  }
+  .img-block
+  {
+    height: 90%;
+  }
+  .marquee-container{
+      align-items: center;
+      overflow: hidden;
+  }
+  .marquee{
+    
+    z-index: 10;
+    position:relative;
+    width:60vw;
+    font-size: 50px;
+      font-family: sans-serif;
+      color: red;
+      white-space: nowrap;
+      animation-name: myanim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes myanim{
+    0% {
+        color: rgb(200, 0, 0); left: 0%; }
+    50% {
+        color: rgb(0, 0, 200); left: 40%; }
+    100% {
+        color: rgb(243, 210, 26); left: 0%;}
+  }
+  #div2{
+    margin-left: 180px;
+    margin-top: 40px;
+  }
+  
+  #image1{
+    border-radius: 20px;
+}
+#image2{
+    border-radius: 20px;
+}
+#image3{
+    border-radius: 20px;
+}
